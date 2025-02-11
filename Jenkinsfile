@@ -1,13 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
-      agent {
-        node {
-          label 'worker'
-        }
-
-      }
+    stage('') {
       steps {
         echo 'hi'
       }
