@@ -57,10 +57,6 @@
     </site>
   </distributionManagement>
 
-       <!--properties for sonarQube analysis -->
-<sonar.host.url>http://13.201.72.252:9000/</sonar.host.url>
-<sonar.projectKey>Simple-Java-Maven-App</sonar.projectKey>
-<sonar.login>sqp_3515e5e25654a047477fbd6a64ca0bb1acb40fc6</sonar.login>
   <properties>
     <cargo.maven.containerId>tomcat${tomcat.major-version}x</cargo.maven.containerId>
     <cargo.maven.containerUrl>https://archive.apache.org/dist/tomcat/tomcat-${tomcat.major-version}/v${tomcat.version}/bin/apache-tomcat-${tomcat.version}.zip</cargo.maven.containerUrl>
@@ -325,20 +321,6 @@
         </executions>
       </plugin>
     </plugins>
-
- <build>
-<pluginManagement>
-<plugins>
-
-<plugin>
-<groupId>org.sonarsource.scanner.maven</groupId>
-<artifactId>sonar-maven-plugin</artifactId>
-<version>3.7.0.1746</version>
-</plugin>
-</plugins>
-</pluginManagement>
-</build>
-  </build>
 
   <profiles>
     <!-- Profiles for Application Server -->
