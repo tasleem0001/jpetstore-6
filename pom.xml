@@ -321,6 +321,7 @@
         </executions>
       </plugin>
     </plugins>
+  </build>
 
   <profiles>
     <!-- Profiles for Application Server -->
