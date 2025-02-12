@@ -16,14 +16,17 @@ pipeline {
 
     stage('package') {
       steps {
-        sh './mvnw package -DskipTests=true'
+        node(label: 'test') {
+          sh './mvnw package -DskipTests=true'
+        }
+
       }
     }
 
-    stage('int test') {
+    stage('deploy') {
       steps {
         node(label: 'test') {
-          sh './mvnw verify -P tomcat90'
+          sh './mvnw cargo:run -P tomcat90'
         }
 
       }
