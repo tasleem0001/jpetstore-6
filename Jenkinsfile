@@ -21,12 +21,6 @@ pipeline {
     }
 
     stage('int test') {
-      agent {
-        node {
-          label 'test'
-        }
-
-      }
       steps {
         node(label: 'test') {
           sh './mvnw verify -P tomcat90'
