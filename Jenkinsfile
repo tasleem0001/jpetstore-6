@@ -15,20 +15,26 @@ pipeline {
     }
 
     stage('package') {
-      steps {
-        node(label: 'test') {
-          sh './mvnw package -DskipTests=true'
+      agent {
+        node {
+          label 'test'
         }
 
+      }
+      steps {
+        sh './mvnw package -DskipTests=true'
       }
     }
 
     stage('deploy') {
-      steps {
-        node(label: 'test') {
-          sh './mvnw cargo:run -P tomcat90'
+      agent {
+        node {
+          label 'test'
         }
 
+      }
+      steps {
+        sh './mvnw cargo:run -P tomcat90'
       }
     }
 
