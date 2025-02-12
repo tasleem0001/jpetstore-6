@@ -26,14 +26,5 @@ pipeline {
       }
     }
 
-    stage('deploy') {
-      steps {
-        node(label: 'test') {
-          sh './mvnw cargo:run -P tomcat90 &'
-        }
-
-      }
-    }
-
   }
 }
