@@ -27,14 +27,11 @@ pipeline {
     }
 
     stage('deploy') {
-      agent {
-        node {
-          label 'test'
+      steps {
+        node(label: 'test') {
+          sh './mvnw cargo:run -P tomcat90'
         }
 
-      }
-      steps {
-        sh './mvnw cargo:run -P tomcat90'
       }
     }
 
