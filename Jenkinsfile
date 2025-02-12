@@ -20,5 +20,14 @@ pipeline {
       }
     }
 
+    stage('int test') {
+      steps {
+        node(label: 'test') {
+          sh './mvnw verify -P tomcat90'
+        }
+
+      }
+    }
+
   }
 }
