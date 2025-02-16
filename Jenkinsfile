@@ -14,5 +14,17 @@ pipeline {
       }
     }
 
+    stage('Package') {
+      agent {
+        node {
+          label 'worker'
+        }
+
+      }
+      steps {
+        sh './mvnw package -DskipTests=true'
+      }
+    }
+
   }
 }
