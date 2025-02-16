@@ -4,6 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Hi, first step'
+        sh './mvnw clean compile'
       }
     }
 
